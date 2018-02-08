@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Main
 {
+    public static final int SERVER_PORT = 5578;
+
     public static void main(String[] args)
     {
         Scanner scan = new Scanner(System.in);
@@ -15,7 +17,7 @@ public class Main
 
         try
         {
-            Registry registry = LocateRegistry.getRegistry(null, 5578);
+            Registry registry = LocateRegistry.getRegistry(null, SERVER_PORT);
 
             Sum w = (Sum) registry.lookup("Worker");
             System.out.println("The sum is: " + w.sum(n));

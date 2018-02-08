@@ -12,8 +12,8 @@ public class Worker implements Sum
 
         try
         {
-            Sum stub = (Sum) UnicastRemoteObject.exportObject(w, 5578);
-            Registry registry = LocateRegistry.createRegistry(5578);
+            Sum stub = (Sum) UnicastRemoteObject.exportObject(w, Main.SERVER_PORT);
+            Registry registry = LocateRegistry.createRegistry(Main.SERVER_PORT);
             registry.bind("Worker", stub);
 
             System.out.println("Worker is ready!");
